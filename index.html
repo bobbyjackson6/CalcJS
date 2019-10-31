@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Калькулятор расчета стоимости бетона</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Калькулятор расчета стоимости бетона</h1>
+    <form action="send.php" method="POST">
+        <div class="calc-columns">
+            <div class="calc-column mark">
+                <select name="mark" id="mark">
+                    <option value disabled selected>Марка бетона</option>
+                    <option value="2450">М100 В7,5</option>
+                    <option value="2600">М150 В12,5</option>
+                    <option value="2720">М200 В15</option>
+                    <option value="2840">М250 В20</option>
+                    <option value="2880">М300 В22,5</option>
+                    <option value="3040">М350 В25</option>
+                    <option value="3150">М400 В300</option>
+                    <option value="3240">М450 В35</option>
+                    <option value="3390">М500 В40</option>
+                </select>
+                <button type="button" class="mark-button" onclick="getMark()">Далее</button>
+                <ul>
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="calc-column napolnitel">
+                <select name="napolnitel" id="napolnitel" class="napolnitel">
+                    <option value disabled selected>Наполнитель</option>
+                    <option value="0">Гравий</option>
+                    <option value="350">Гранит</option>
+                </select>
+                <button type="button" value="Далее" class="napolnitel-button" onclick="getNapolnitel()">Далее</button>
+                <ul>
+                    <li class="active"></li>
+                    <li class="active"></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="calc-column objem">
+            <input type="text" id="objem" name="objem">
+            <button type="button" class="itog-button" onclick="getObjem()">Подсчитать</button>
+            <ul>
+                <li class="active"></li>
+                <li class="active"></li>
+                <li class="active"></li>
+            </ul>
+        </div>
+        <div class="itog calc-column">
+            <div class="itog-description">
+                <div class="itog-mark"></div>
+                <div class="itog-napolnitel"><b>Наполнитель:</b></div>
+                <div class="itog-objem"><b>Объём:</b></div>
+            </div>
+            <br>
+            <div class="itog-sum"></div>
+            <div class="buttons">
+                <button type="buttont" class="back-button">Нaзад</button>
+                <button type="submit" class="order-button">Заказать</button>
+            </div>
+        </div>
+    </form>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
